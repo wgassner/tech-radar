@@ -168,7 +168,7 @@ function radar_visualization(config) {
 
   // assign unique sequential id to each entry
   var id = 1;
-  for (var quadrant of [2,3,1,0]) {
+  for (var quadrant of [2,1,3,0]) {
     for (var ring = 0; ring < 4; ring++) {
       var entries = segmented[quadrant][ring];
       entries.sort(function(a,b) { return a.label.localeCompare(b.label); })
@@ -274,7 +274,8 @@ function radar_visualization(config) {
       .attr("transform", translate(title_offset.x, title_offset.y))
       .text(config.title)
       .style("font-family", "Arial, Helvetica")
-      .style("font-size", "34px");
+      .style("font-size", "34px")
+      ;
 
     // footer
     radar.append("text")
